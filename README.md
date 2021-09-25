@@ -1,4 +1,21 @@
 # Django-Embed-Video-Testing
+Django app for easy embedding YouTube and Vimeo videos and music from SoundCloud.
+.. image:: https://jazzband.co/static/img/badge.svg
+   :target: https://jazzband.co/
+   :alt: Jazzband
+.. image:: https://github.com/jazzband/django-embed-video/workflows/Test/badge.svg
+   :target: https://github.com/jazzband/django-embed-video/actions
+   :alt: GitHub Actions
+.. image:: https://coveralls.io/repos/yetty/django-embed-video/badge.svg?branch=master
+   :target: https://coveralls.io/r/yetty/django-embed-video?branch=master
+   :alt: Coveralls coverage percentage
+.. image:: https://img.shields.io/pypi/pyversions/django-embed-video.svg
+   :target: https://pypi.org/project/django-embed-video/
+   :alt: Supported Python versions
+.. image:: https://img.shields.io/pypi/djversions/django-embed-video.svg
+   :target: https://pypi.org/project/django-embed-video/
+   :alt: Supported Django versions
+   
 <a id='home'></a>
 __Choose a language that suits you__
 
@@ -19,22 +36,22 @@ Install the requirments.txt file to view the program
 
 View the code of the program in the HTML file
 
-```html
-{% load embed_video_tags %}
+.. code-block:: html+django
 
-<!-- The video tag: -->
-{% video item.video as my_video %}
-  URL: {{ my_video.url }}
-  Thumbnail: {{ my_video.thumbnail }}
-  Backend: {{ my_video.backend }}
+      {% load embed_video_tags %}
 
-  {% video my_video "large" %}
-{% endvideo %}
+      <!-- The video tag: -->
+      {% video item.video as my_video %}
+        URL: {{ my_video.url }}
+        Thumbnail: {{ my_video.thumbnail }}
+        Backend: {{ my_video.backend }}
 
-<!-- Or embed shortcut: -->
-{% video my_video '800x600' %}
+        {% video my_video "large" %}
+      {% endvideo %}
 
-```
+      <!-- Or embed shortcut: -->
+      {% video my_video '800x600' %}
+      
 > Location in the model.py file in your program
 ```python
 from django.db import models
